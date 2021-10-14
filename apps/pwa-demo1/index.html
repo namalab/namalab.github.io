@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="icon.png">
+<link rel="manifest" href="manifest.json">
+<title>PWA Demo1</title>
+</head>
+
+<body>
+  <canvas id="gameCanvas"></canvas>
+
+  <script type="text/javascript" src="cocos2d-js-v3.13.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service_worker.js').then(function (registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        registration.onupdatefound = function () {
+          console.log('update exists.');
+          registration.update();
+        }
+      }).catch(function (err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
+  </script>
+</body>
+
+</html>

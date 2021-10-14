@@ -1,0 +1,14 @@
+{
+  "short_name": "PWADemo1",
+  "name": "PWA Demo-1",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "start_url": "index.html",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
